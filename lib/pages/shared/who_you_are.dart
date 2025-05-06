@@ -35,7 +35,7 @@ class WhoAreYouPage extends StatelessWidget {
                 subtitle: 'الوصول إلى الهاكاثونات الموجودة',
                 onTap: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                  MaterialPageRoute(builder: (context) => const SignUpScreen()),
                 ),
               ),
               const SizedBox(height: 12),
@@ -45,7 +45,7 @@ class WhoAreYouPage extends StatelessWidget {
                 subtitle: 'إدارة موارد الجامعة',
                 onTap: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                  MaterialPageRoute(builder: (context) => const SignUpScreen()),
                 ),
               ),
               const SizedBox(height: 12),
@@ -55,7 +55,7 @@ class WhoAreYouPage extends StatelessWidget {
                 subtitle: 'إنشاء وإدارة الفعاليات',
                 onTap: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                  MaterialPageRoute(builder: (context) => const SignUpScreen()),
                 ),
               ),
             ],
@@ -73,7 +73,7 @@ class WhoAreYouPage extends StatelessWidget {
   }) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      color: ColorsManger.cardcolor,
+      color: ColorsManger.bgColor,
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: Colors.blue.shade50,

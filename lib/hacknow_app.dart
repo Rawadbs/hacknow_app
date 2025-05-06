@@ -19,7 +19,7 @@ class HacknowApp extends StatelessWidget {
         theme: ThemeData(
             useMaterial3: true,
             primaryColor: ColorsManger.primaryColor,
-            scaffoldBackgroundColor: ColorsManger.cardcolor),
+            scaffoldBackgroundColor: ColorsManger.bgColor),
         initialRoute: Routes.welcomeScreen,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,

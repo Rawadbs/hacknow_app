@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ColorsManger {
-  static const Color primaryColor = Color(0xff4F46E5);
+  static const Color primaryColor = Color(0xff3D47B4);
   static const Color lightblueColor = Color(0xffECF0F8);
   static const Color darkestblueColor = Color(0xff1B2A51);
   static const Color darkblueColor = Color(0xff2E4A87);
   static const Color darketblueColor = Color(0xff0C254B);
 
-  static const Color cardcolor = Color(0xffF3F4F6);
+  static const Color bgColor = Color(0xffFafafa);
   static const Color blackColor = Color(0xff151F3F);
   static const Color darkblackColor = Color(0xff24292E);
   static const Color lightgrayColor = Color(0xffB3B3B3);

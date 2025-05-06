@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hacknow_app/helpers/colors.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -17,6 +19,7 @@ class SignUpScreenState extends State<SignUpScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
+        backgroundColor: ColorsManger.bgColor,
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: Column(
@@ -51,6 +54,8 @@ class SignUpScreenState extends State<SignUpScreen> {
               Row(
                 children: [
                   Checkbox(
+                    activeColor: const Color(0xFF6C63FF),
+                    side: const BorderSide(color: Color(0xFF9CA3AF)),
                     value: agreeToTerms,
                     onChanged: (value) {
                       setState(() {
@@ -75,7 +80,10 @@ class SignUpScreenState extends State<SignUpScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: const Text('تسجيل',),
+                  child: Text(
+                    'تسجيل',
+                    style: TextStyles.font16BoldWhite,
+                  ),
                 ),
               ),
               const SizedBox(height: 16),
@@ -112,15 +120,20 @@ class SignUpScreenState extends State<SignUpScreen> {
         Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
         const SizedBox(height: 8),
         TextField(
-          
           decoration: InputDecoration(
-            hintText: hint,
-            prefixIcon: Icon(icon),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-             
-            ),
-          ),
+              hintText: hint,
+              prefixIcon: Icon(icon),
+              prefixIconColor: const Color(0xFF9CA3AF),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: const BorderSide(
+                    color: Color(0xFFE5E7EB),
+                    width: 1,
+                  )),
+              filled: true,
+              fillColor: Colors.white),
         ),
       ],
     );
@@ -137,12 +150,24 @@ class SignUpScreenState extends State<SignUpScreen> {
           obscureText: !obscureText,
           decoration: InputDecoration(
             hintText: hint,
-            prefixIcon: IconButton(
-              icon: Icon(obscureText ? Icons.visibility : Icons.visibility_off),
+            suffixIcon: IconButton(
+              icon: Icon(obscureText
+                  ? Icons.visibility_off_outlined
+                  : Icons.visibility_off_outlined),
+              color: const Color(0xFF9CA3AF),
               onPressed: toggle,
             ),
-            suffixIcon: const Icon(Icons.lock),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+            prefixIcon: const Icon(Icons.lock),
+            prefixIconColor: const Color(0xFF9CA3AF),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: const BorderSide(
+                  color: Color(0xFFE5E7EB),
+                  width: 1,
+                )),
+            filled: true,
+            fillColor: Colors.white,
           ),
         ),
       ],
