@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:hacknow_app/helpers/extencions.dart';
 import 'package:hacknow_app/helpers/styles.dart';
-import 'package:hacknow_app/pages/shared/auth/sign_up_screen.dart';
+import 'package:hacknow_app/pages/universty/student_request.dart';
+import 'package:hacknow_app/pages/users/home.dart';
 import 'package:hacknow_app/pages/users/nav_bar.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreenUniversty extends StatefulWidget {
+  const SignUpScreenUniversty({super.key});
 
   @override
-  LoginScreenState createState() => LoginScreenState();
+  SignUpScreenUniverstyState createState() => SignUpScreenUniverstyState();
 }
 
-class LoginScreenState extends State<LoginScreen> {
+class SignUpScreenUniverstyState extends State<SignUpScreenUniversty> {
   bool agreeToTerms = false;
   bool showPassword = false;
   bool showConfirmPassword = false;
@@ -28,9 +30,12 @@ class LoginScreenState extends State<LoginScreen> {
             children: [
               const SizedBox(height: 50),
               const Text(
-                'تسجيل دخول',
+                'إنشاء حساب جديد',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
+              const SizedBox(height: 24),
+              _buildTextField(
+                  'الاسم الكامل', 'أدخل اسمك الكامل', Icons.person_2_outlined),
               const SizedBox(height: 12),
               _buildTextField('البريد الإلكتروني', 'أدخل بريدك الإلكتروني',
                   Icons.email_outlined),
@@ -41,16 +46,40 @@ class LoginScreenState extends State<LoginScreen> {
                 showPassword,
                 () => setState(() => showPassword = !showPassword),
               ),
+              const SizedBox(height: 12),
+              _buildPasswordField(
+                'تأكيد كلمة المرور',
+                'أدخل كلمة المرور مرة أخرى',
+                showConfirmPassword,
+                () =>
+                    setState(() => showConfirmPassword = !showConfirmPassword),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Checkbox(
+                    activeColor: const Color(0xFF6C63FF),
+                    side: const BorderSide(color: Color(0xFF9CA3AF)),
+                    value: agreeToTerms,
+                    onChanged: (value) {
+                      setState(() {
+                        agreeToTerms = value!;
+                      });
+                    },
+                  ),
+                  const Expanded(child: Text('أوافق على الشروط والأحكام')),
+                ],
+              ),
               const SizedBox(height: 16),
               SizedBox(
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const NavBar()));
+                            builder: (context) => StudentRequestsPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF6C63FF),
@@ -59,7 +88,7 @@ class LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   child: Text(
-                    'تسجيل دخول',
+                    'تسجيل',
                     style: TextStyles.font16BoldWhite,
                   ),
                 ),
@@ -68,18 +97,15 @@ class LoginScreenState extends State<LoginScreen> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignUpScreen()));
+                    // ضع هنا منطق الانتقال لتسجيل الدخول
                   },
                   child: RichText(
                     text: const TextSpan(
-                      text: 'لا يوجد لديك حساب؟ ',
+                      text: 'لديك حساب بالفعل؟ ',
                       style: TextStyle(color: Colors.black),
                       children: [
                         TextSpan(
-                          text: 'تسجيل ',
+                          text: 'تسجيل الدخول',
                           style: TextStyle(color: Colors.blue),
                         ),
                       ],

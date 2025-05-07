@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hacknow_app/helpers/colors.dart';
+import 'package:hacknow_app/helpers/extencions.dart';
 import 'package:hacknow_app/helpers/styles.dart';
+import 'package:hacknow_app/pages/shared/auth/login_screen.dart';
+import 'package:hacknow_app/pages/users/home.dart';
+import 'package:hacknow_app/pages/users/nav_bar.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -19,7 +22,7 @@ class SignUpScreenState extends State<SignUpScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        backgroundColor: ColorsManger.bgColor,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: Column(
@@ -31,10 +34,11 @@ class SignUpScreenState extends State<SignUpScreen> {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 24),
-              _buildTextField('الاسم الكامل', 'أدخل اسمك الكامل', Icons.person),
-              const SizedBox(height: 12),
               _buildTextField(
-                  'البريد الإلكتروني', 'أدخل بريدك الإلكتروني', Icons.email),
+                  'الاسم الكامل', 'أدخل اسمك الكامل', Icons.person_2_outlined),
+              const SizedBox(height: 12),
+              _buildTextField('البريد الإلكتروني', 'أدخل بريدك الإلكتروني',
+                  Icons.email_outlined),
               const SizedBox(height: 12),
               _buildPasswordField(
                 'كلمة المرور',
@@ -72,7 +76,10 @@ class SignUpScreenState extends State<SignUpScreen> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    // ضع هنا منطق التسجيل
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const NavBar()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF6C63FF),
@@ -90,7 +97,10 @@ class SignUpScreenState extends State<SignUpScreen> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    // ضع هنا منطق الانتقال لتسجيل الدخول
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()));
                   },
                   child: RichText(
                     text: const TextSpan(
@@ -157,7 +167,7 @@ class SignUpScreenState extends State<SignUpScreen> {
               color: const Color(0xFF9CA3AF),
               onPressed: toggle,
             ),
-            prefixIcon: const Icon(Icons.lock),
+            prefixIcon: const Icon(Icons.lock_outline),
             prefixIconColor: const Color(0xFF9CA3AF),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
             enabledBorder: OutlineInputBorder(
