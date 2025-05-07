@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacknow_app/helpers/colors.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 import 'package:hacknow_app/pages/shared/auth/sign_up_screen.dart';
 import 'package:hacknow_app/pages/shared/auth/sign_up_screen_admin.dart';
 import 'package:hacknow_app/pages/shared/auth/sign_up_screen_universty.dart';
@@ -19,13 +20,7 @@ class WhoAreYouPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 50),
-              const Text(
-                'من أنت؟',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Text('من أنت؟', style: TextStyles.font20BoldBlack),
               const SizedBox(height: 24),
               _buildOption(
                 icon: Icons.school,
@@ -79,11 +74,14 @@ class WhoAreYouPage extends StatelessWidget {
       ),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: Colors.blue.shade50,
+          backgroundColor: const Color(0xFFF3F0FF),
           child: Icon(icon, color: ColorsManger.primaryColor),
         ),
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: Text(subtitle),
+        title: Text(title, style: TextStyles.font16MediumBlack),
+        subtitle: Text(
+          subtitle,
+          style: TextStyles.font14BoldDarkBlue,
+        ),
         onTap: onTap,
       ),
     );

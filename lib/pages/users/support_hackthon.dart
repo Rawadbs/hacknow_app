@@ -21,7 +21,10 @@ class SupportRequestPageState extends State<SupportRequestPage> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           centerTitle: true,
-          title: const Text('طلب الدعم'),
+          title: Text(
+            'طلب الدعم',
+            style: TextStyles.font16BoldBlack,
+          ),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_outlined),
             onPressed: () {
@@ -33,20 +36,23 @@ class SupportRequestPageState extends State<SupportRequestPage> {
           padding: const EdgeInsets.all(16),
           children: [
             const SizedBox(height: 24),
-            const Center(
+            Center(
               child: Column(
                 children: [
-                  Icon(Icons.school, size: 48, color: Colors.indigo),
-                  SizedBox(height: 16),
-                  Text(
+                  const Icon(Icons.school, size: 48, color: Colors.indigo),
+                  const SizedBox(height: 16),
+                  const Text(
                     'طلب دعم لمشاركة الهاكاثون',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: FontConstant.fontFamily),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     'يرجى ملء التفاصيل أدناه لطلب الدعم لمشاركتك في الهاكاثون',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Color(0xff9CA3AF)),
+                    style: TextStyles.font14BoldDarkBlue,
                   ),
                 ],
               ),
@@ -57,11 +63,19 @@ class SupportRequestPageState extends State<SupportRequestPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('الاسم الكامل'),
+                  const Text(
+                    'الاسم الكامل',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontFamily: FontConstant.fontFamily),
+                  ),
                   const SizedBox(height: 8),
                   TextFormField(
                     decoration: InputDecoration(
                         hintText: 'أدخل اسمك الكامل',
+                        hintStyle: TextStyles.font16MediumLightGray,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8)),
                         enabledBorder: OutlineInputBorder(
@@ -74,11 +88,19 @@ class SupportRequestPageState extends State<SupportRequestPage> {
                         fillColor: const Color(0xffF9FAFB)),
                   ),
                   const SizedBox(height: 16),
-                  const Text('رقم الطالب'),
+                  const Text(
+                    'رقم الطالب',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontFamily: FontConstant.fontFamily),
+                  ),
                   const SizedBox(height: 8),
                   TextFormField(
                     decoration: InputDecoration(
                         hintText: 'أدخل رقم الطالب الخاص بك',
+                        hintStyle: TextStyles.font16MediumLightGray,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8)),
                         enabledBorder: OutlineInputBorder(
@@ -91,12 +113,20 @@ class SupportRequestPageState extends State<SupportRequestPage> {
                         fillColor: const Color(0xffF9FAFB)),
                   ),
                   const SizedBox(height: 16),
-                  const Text('البريد الجامعي'),
+                  const Text(
+                    'البريد الجامعي',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontFamily: FontConstant.fontFamily),
+                  ),
                   const SizedBox(height: 8),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         hintText: 'your.email@university.edu',
+                        hintStyle: TextStyles.font16MediumLightGray,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8)),
                         enabledBorder: OutlineInputBorder(
@@ -109,11 +139,19 @@ class SupportRequestPageState extends State<SupportRequestPage> {
                         fillColor: const Color(0xffF9FAFB)),
                   ),
                   const SizedBox(height: 16),
-                  const Text('اختر الهاكاثون'),
+                  const Text(
+                    'اختر الهاكاثون',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontFamily: FontConstant.fontFamily),
+                  ),
                   const SizedBox(height: 8),
                   DropdownButtonFormField<String>(
                     decoration: InputDecoration(
                         hintText: 'اختر فعالية الهاكاثون',
+                        hintStyle: TextStyles.font16MediumLightGray,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -139,13 +177,21 @@ class SupportRequestPageState extends State<SupportRequestPage> {
                     },
                   ),
                   const SizedBox(height: 16),
-                  const Text('مبررات الطلب'),
+                  const Text(
+                    'مبررات الطلب',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontFamily: FontConstant.fontFamily),
+                  ),
                   const SizedBox(height: 8),
                   TextFormField(
                     maxLines: 4,
                     decoration: InputDecoration(
                         hintText:
                             'اشرح سبب حاجتك للدعم وكيف سيفيد مسيرتك الأكاديمية',
+                        hintStyle: TextStyles.font16MediumLightGray,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8)),
                         enabledBorder: OutlineInputBorder(
@@ -179,10 +225,10 @@ class SupportRequestPageState extends State<SupportRequestPage> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Center(
+                  Center(
                     child: Text(
                       'سيتم مراجعة طلبك خلال 3-5 أيام عمل',
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyles.font16MediumLightGray,
                     ),
                   ),
                 ],

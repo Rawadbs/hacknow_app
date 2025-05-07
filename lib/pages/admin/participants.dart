@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 
 class ParticipantsPage extends StatelessWidget {
   const ParticipantsPage({super.key});
@@ -22,9 +23,9 @@ class ParticipantsPage extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: const Text(
+          title: Text(
             'المشاركون',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyles.font20BoldBlack,
           ),
           leading: IconButton(
             onPressed: () {
@@ -36,13 +37,13 @@ class ParticipantsPage extends StatelessWidget {
         ),
         body: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(20.0),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Text(
                   '٨ طالب مسجلين',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyles.font14MediumGray,
                 ),
               ),
             ),
@@ -63,11 +64,11 @@ class ParticipantsPage extends StatelessWidget {
                     ),
                     title: Text(
                       participant['name']!,
-                      style: const TextStyle(color: Colors.black, fontSize: 16),
+                      style: TextStyles.font14RegularBlack,
                     ),
                     subtitle: Text(
                       participant['university']!,
-                      style: const TextStyle(color: Colors.grey),
+                      style: TextStyles.font14MediumGray,
                     ),
                   );
                 },

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hacknow_app/helpers/colors.dart';
 
 class FontConstant {
-  static const String fontFamily = 'Saudi';
+  static const String fontFamily = 'IBM';
 }
 
 class TextStyles {
@@ -11,6 +11,17 @@ class TextStyles {
       fontWeight: FontWeight.bold,
       color: Colors.white,
       fontFamily: FontConstant.fontFamily);
+  static TextStyle font16Boldred = const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: Colors.red,
+      fontFamily: FontConstant.fontFamily);
+  static TextStyle font14regWhite = const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: Colors.white,
+      fontFamily: FontConstant.fontFamily);
+
   static TextStyle font18BoldWhite = const TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.bold,
@@ -23,17 +34,22 @@ class TextStyles {
       fontFamily: FontConstant.fontFamily);
   static TextStyle font14BoldDarkBlue = const TextStyle(
       fontSize: 14,
-      fontWeight: FontWeight.bold,
-      color: ColorsManger.darkblueColor,
+      fontWeight: FontWeight.normal,
+      color: Color(0xff6B7280),
       fontFamily: FontConstant.fontFamily);
   static TextStyle font14BoldPrimaryBlue = const TextStyle(
       fontSize: 14,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.normal,
       color: ColorsManger.primaryColor,
       fontFamily: FontConstant.fontFamily);
   static TextStyle font16BoldPrimaryBlue = const TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.bold,
+      color: ColorsManger.primaryColor,
+      fontFamily: FontConstant.fontFamily);
+  static TextStyle font16REGPrimaryBlue = const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
       color: ColorsManger.primaryColor,
       fontFamily: FontConstant.fontFamily);
 
@@ -42,9 +58,24 @@ class TextStyles {
       fontWeight: FontWeight.w500,
       color: ColorsManger.blackColor,
       fontFamily: FontConstant.fontFamily);
+  static TextStyle font14MediumBlack = const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: ColorsManger.blackColor,
+      fontFamily: FontConstant.fontFamily);
+  static TextStyle font14Mreggray = const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: Color(0xff4B5563),
+      fontFamily: FontConstant.fontFamily);
+  static TextStyle font16Mreggray = const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+      color: Color(0xff4B5563),
+      fontFamily: FontConstant.fontFamily);
 
   static TextStyle font20BoldBlack = const TextStyle(
-      fontSize: 20,
+      fontSize: 24,
       fontWeight: FontWeight.bold,
       color: ColorsManger.blackColor,
       fontFamily: FontConstant.fontFamily);
@@ -86,8 +117,13 @@ class TextStyles {
 
   static TextStyle font16MediumLightGray = const TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.w500,
-      color: ColorsManger.lightergrayColor,
+      fontWeight: FontWeight.normal,
+      color: Color(0xff9CA3AF),
+      fontFamily: FontConstant.fontFamily);
+  static TextStyle font14MediumLightGray = const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: Color(0xff9CA3AF),
       fontFamily: FontConstant.fontFamily);
   static TextStyle font12MediumLightGray = const TextStyle(
       fontSize: 12,

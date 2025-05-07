@@ -6,7 +6,7 @@ class SearchTeamPage extends StatelessWidget {
   final List<Map<String, dynamic>> teams = [
     {
       'name': 'فريق المبتكرين التقنيين',
-      'description': 'هاكاثون عالمي 2024',
+      'description': 'هاكاثون عالمي 2025',
       'members': '3/5 أعضاء',
       'avatars': [
         'assets/images/avatar.png',
@@ -47,7 +47,10 @@ class SearchTeamPage extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
             backgroundColor: Colors.white,
-            title: const Text('البحث عن فريق'),
+            title: Text(
+              'البحث عن فريق',
+              style: TextStyles.font18BoldBlack,
+            ),
             centerTitle: true,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_outlined),
@@ -92,18 +95,17 @@ class SearchTeamPage extends StatelessWidget {
                     children: [
                       Text(
                         team['name'],
-                        style: const TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyles.font18BoldBlack,
                       ),
                       const SizedBox(height: 4),
                       Text(
                         team['description'],
-                        style: const TextStyle(color: Colors.grey),
+                        style: TextStyles.font16Mreggray,
                       ),
                       const SizedBox(height: 8),
                       Text(
                         team['members'],
-                        style: const TextStyle(color: Colors.grey),
+                        style: TextStyles.font16Mreggray,
                       ),
                       const SizedBox(height: 8),
                       Row(
@@ -128,7 +130,7 @@ class SearchTeamPage extends StatelessWidget {
                             side: BorderSide.none,
                             label: Text(role),
                             backgroundColor: Colors.indigo.shade50,
-                            labelStyle: const TextStyle(color: Colors.indigo),
+                            labelStyle: TextStyles.font16REGPrimaryBlue,
                           );
                         }).toList(),
                       ),
@@ -141,7 +143,10 @@ class SearchTeamPage extends StatelessWidget {
                             color:
                                 const WidgetStatePropertyAll(Color(0xffF3F4F6)),
                             side: BorderSide.none,
-                            label: Text(skill),
+                            label: Text(
+                              skill,
+                              style: TextStyles.font16Mreggray,
+                            ),
                             backgroundColor: Colors.grey.shade200,
                           );
                         }).toList(),
@@ -188,7 +193,12 @@ class FilterChipWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
       child: ChoiceChip(
-        label: Text(label),
+        label: Text(
+          label,
+          style: selected
+              ? TextStyles.font14MediumWhite
+              : TextStyles.font14RegularBlack,
+        ),
         selected: selected,
         side: BorderSide(
           color: selected ? ColorsManger.primaryColor : Colors.transparent,

@@ -31,7 +31,10 @@ class SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(height: 50),
               const Text(
                 'إنشاء حساب جديد',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: FontConstant.fontFamily),
               ),
               const SizedBox(height: 24),
               _buildTextField(
@@ -67,7 +70,11 @@ class SignUpScreenState extends State<SignUpScreen> {
                       });
                     },
                   ),
-                  const Expanded(child: Text('أوافق على الشروط والأحكام')),
+                  Expanded(
+                      child: Text(
+                    'أوافق على الشروط والأحكام',
+                    style: TextStyles.font14RegularBlack,
+                  )),
                 ],
               ),
               const SizedBox(height: 16),
@@ -103,13 +110,13 @@ class SignUpScreenState extends State<SignUpScreen> {
                             builder: (context) => const LoginScreen()));
                   },
                   child: RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       text: 'لديك حساب بالفعل؟ ',
-                      style: TextStyle(color: Colors.black),
-                      children: [
+                      style: TextStyles.font14RegularBlack,
+                      children:  [
                         TextSpan(
                           text: 'تسجيل الدخول',
-                          style: TextStyle(color: Colors.blue),
+                    style: TextStyles.font14BoldPrimaryBlue,
                         ),
                       ],
                     ),
@@ -127,11 +134,19 @@ class SignUpScreenState extends State<SignUpScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
+        Text(
+          label,
+          style: const TextStyle(
+              fontSize: 14,
+              color: Colors.black,
+              fontWeight: FontWeight.normal,
+              fontFamily: FontConstant.fontFamily),
+        ),
         const SizedBox(height: 8),
         TextField(
           decoration: InputDecoration(
               hintText: hint,
+              hintStyle: TextStyles.font16MediumLightGray,
               prefixIcon: Icon(icon),
               prefixIconColor: const Color(0xFF9CA3AF),
               border:
@@ -154,12 +169,20 @@ class SignUpScreenState extends State<SignUpScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
+        Text(
+          label,
+          style: const TextStyle(
+              fontSize: 14,
+              color: Colors.black,
+              fontWeight: FontWeight.normal,
+              fontFamily: FontConstant.fontFamily),
+        ),
         const SizedBox(height: 8),
         TextField(
           obscureText: !obscureText,
           decoration: InputDecoration(
             hintText: hint,
+            hintStyle: TextStyles.font16MediumLightGray,
             suffixIcon: IconButton(
               icon: Icon(obscureText
                   ? Icons.visibility_off_outlined

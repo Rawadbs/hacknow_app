@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 import 'package:hacknow_app/pages/admin/createhackthon.dart';
 import 'package:hacknow_app/pages/admin/participants.dart';
 import 'package:hacknow_app/pages/shared/who_you_are.dart';
@@ -18,7 +19,11 @@ class HackathonEventsPage extends StatelessWidget {
           centerTitle: true,
           title: const Text(
             'فعاليات الهاكاثون',
-            style: TextStyle(color: Colors.black, fontSize: 20),
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                fontFamily: FontConstant.fontFamily),
           ),
           leading: IconButton(
             icon: const Icon(
@@ -62,9 +67,9 @@ class HackathonEventsPage extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton.icon(
                   icon: const Icon(Icons.add, color: Colors.white),
-                  label: const Text(
+                  label: Text(
                     'إضافة فعالية جديدة',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyles.font16BoldWhite,
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF6C5DD3),
@@ -128,7 +133,10 @@ class _StatCard extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         Text(count, style: const TextStyle(fontSize: 18)),
-        Text(label, style: const TextStyle(color: Colors.grey)),
+        Text(
+          label,
+          style: TextStyles.font14RegularBlack,
+        ),
       ],
     );
   }
@@ -137,12 +145,33 @@ class _StatCard extends StatelessWidget {
 class _TableHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Expanded(child: Center(child: Text('اسم الفعالية'))),
-        Expanded(child: Center(child: Text('التاريخ'))),
-        Expanded(child: Center(child: Text('المستخدمون'))),
-        SizedBox(width: 80, child: Center(child: Text('الإجراءات'))),
+        Expanded(
+            child: Center(
+                child: Text(
+          'اسم الفعالية',
+          style: TextStyles.font14RegularBlack,
+        ))),
+        Expanded(
+            child: Center(
+                child: Text(
+          'التاريخ',
+          style: TextStyles.font14RegularBlack,
+        ))),
+        Expanded(
+            child: Center(
+                child: Text(
+          'المستخدمون',
+          style: TextStyles.font14RegularBlack,
+        ))),
+        SizedBox(
+            width: 80,
+            child: Center(
+                child: Text(
+              'الإجراءات',
+              style: TextStyles.font14RegularBlack,
+            ))),
       ],
     );
   }
@@ -162,9 +191,24 @@ class _EventRow extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
-          Expanded(child: Center(child: Text(name))),
-          Expanded(child: Center(child: Text(date))),
-          Expanded(child: Center(child: Text(users))),
+          Expanded(
+              child: Center(
+                  child: Text(
+            name,
+            style: TextStyles.font14RegularBlack,
+          ))),
+          Expanded(
+              child: Center(
+                  child: Text(
+            date,
+            style: TextStyles.font14RegularBlack,
+          ))),
+          Expanded(
+              child: Center(
+                  child: Text(
+            users,
+            style: TextStyles.font14RegularBlack,
+          ))),
           const SizedBox(
             width: 80,
             child: Row(

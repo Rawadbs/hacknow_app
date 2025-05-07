@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 
 class CreateHackathonPage extends StatelessWidget {
   const CreateHackathonPage({super.key});
@@ -8,13 +9,22 @@ class CreateHackathonPage extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
           title: const Text('إنشاء هاكاثون',
-              style: TextStyle(color: Colors.black)),
-          leading: const Icon(Icons.arrow_back_ios, color: Colors.black),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: FontConstant.fontFamily)),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back_ios),
+            color: Colors.black,
+          ),
         ),
         body: SafeArea(
           child: SingleChildScrollView(
@@ -31,20 +41,20 @@ class CreateHackathonPage extends StatelessWidget {
                 const SizedBox(height: 24),
                 _ImageUploader(),
                 const SizedBox(height: 20),
-                _LabeledTextField(
+                const _LabeledTextField(
                   label: 'اسم الهاكاثون',
                   hint: 'أدخل اسم الهاكاثون',
                   required: true,
                 ),
                 const SizedBox(height: 16),
-                _LabeledTextField(
+                const _LabeledTextField(
                   label: 'الوصف',
                   hint: 'اكتب وصف الهاكاثون',
                   required: true,
                   maxLines: 3,
                 ),
                 const SizedBox(height: 16),
-                Row(
+                const Row(
                   children: [
                     Expanded(
                       child: _LabeledTextField(
@@ -54,7 +64,7 @@ class CreateHackathonPage extends StatelessWidget {
                         icon: Icons.calendar_today,
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    SizedBox(width: 12),
                     Expanded(
                       child: _LabeledTextField(
                         label: 'تاريخ البداية',
@@ -66,20 +76,20 @@ class CreateHackathonPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 16),
-                _LabeledTextField(
+                const _LabeledTextField(
                   label: 'الموقع',
                   hint: 'أدخل الموقع',
                   required: true,
                   icon: Icons.location_on,
                 ),
                 const SizedBox(height: 16),
-                _LabeledTextField(
+                const _LabeledTextField(
                   label: 'رابط التسجيل',
                   hint: 'أدخل رابط التسجيل',
                   icon: Icons.link,
                 ),
                 const SizedBox(height: 16),
-                _LabeledTextField(
+                const _LabeledTextField(
                   label: 'البريد الإلكتروني للتواصل',
                   hint: 'أدخل البريد الإلكتروني للتواصل',
                   required: true,
@@ -97,10 +107,9 @@ class CreateHackathonPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       'إنشاء الهاكاثون',
-                      style:
-                          TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                      style: TextStyles.font16BoldWhite,
                     ),
                   ),
                 ),
@@ -124,13 +133,14 @@ class _ImageUploader extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         color: Colors.grey.shade50,
       ),
-      child: Center(
+      child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Icon(Icons.image_outlined, color: Colors.grey, size: 32),
             SizedBox(height: 8),
-            Text('رفع صورة الغلاف', style: TextStyle(color: Colors.black , fontSize: 16)),
+            Text('رفع صورة الغلاف',
+                style: TextStyle(color: Colors.black, fontSize: 16)),
             Text('الحد الأقصى للحجم: ٥ ميجابايت',
                 style: TextStyle(fontSize: 12, color: Colors.grey)),
           ],
@@ -165,7 +175,11 @@ class _LabeledTextField extends StatelessWidget {
             children: [
               TextSpan(
                 text: label,
-                style: const TextStyle(fontWeight: FontWeight.w500),
+                style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.black,
+                    fontWeight: FontWeight.normal,
+                    fontFamily: FontConstant.fontFamily),
               ),
               if (required)
                 const TextSpan(
@@ -180,6 +194,7 @@ class _LabeledTextField extends StatelessWidget {
           maxLines: maxLines,
           decoration: InputDecoration(
             hintText: hint,
+            hintStyle: TextStyles.font16MediumLightGray,
             prefixIcon: icon != null ? Icon(icon, color: Colors.grey) : null,
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 14, horizontal: 12),

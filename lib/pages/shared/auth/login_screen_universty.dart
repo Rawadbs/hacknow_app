@@ -29,7 +29,10 @@ class LoginScreenUniverstyState extends State<LoginScreenUniversty> {
               const SizedBox(height: 50),
               const Text(
                 'تسجيل دخول',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: FontConstant.fontFamily),
               ),
               const SizedBox(height: 12),
               _buildTextField('البريد الإلكتروني', 'أدخل بريدك الإلكتروني',
@@ -47,7 +50,10 @@ class LoginScreenUniverstyState extends State<LoginScreenUniversty> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  StudentRequestsPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => StudentRequestsPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF6C63FF),
@@ -65,16 +71,20 @@ class LoginScreenUniverstyState extends State<LoginScreenUniversty> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreenUniversty()));
-                                    },
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const SignUpScreenUniversty()));
+                  },
                   child: RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       text: 'لا يوجد لديك حساب؟ ',
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyles.font14RegularBlack,
                       children: [
                         TextSpan(
                           text: 'تسجيل ',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyles.font14BoldPrimaryBlue,
                         ),
                       ],
                     ),
@@ -92,11 +102,19 @@ class LoginScreenUniverstyState extends State<LoginScreenUniversty> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
+        Text(
+          label,
+          style: const TextStyle(
+              fontSize: 14,
+              color: Colors.black,
+              fontWeight: FontWeight.normal,
+              fontFamily: FontConstant.fontFamily),
+        ),
         const SizedBox(height: 8),
         TextField(
           decoration: InputDecoration(
               hintText: hint,
+              hintStyle: TextStyles.font16MediumLightGray,
               prefixIcon: Icon(icon),
               prefixIconColor: const Color(0xFF9CA3AF),
               border:
@@ -119,12 +137,20 @@ class LoginScreenUniverstyState extends State<LoginScreenUniversty> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
+        Text(
+          label,
+          style: const TextStyle(
+              fontSize: 14,
+              color: Colors.black,
+              fontWeight: FontWeight.normal,
+              fontFamily: FontConstant.fontFamily),
+        ),
         const SizedBox(height: 8),
         TextField(
           obscureText: !obscureText,
           decoration: InputDecoration(
             hintText: hint,
+            hintStyle: TextStyles.font16MediumLightGray,
             suffixIcon: IconButton(
               icon: Icon(obscureText
                   ? Icons.visibility_off_outlined

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hacknow_app/helpers/colors.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 import 'package:hacknow_app/pages/users/support_hackthon.dart';
 
 class HakthonDetails extends StatelessWidget {
@@ -14,7 +15,11 @@ class HakthonDetails extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: const Text('تفاصيل الفعالية'),
+          title: Text(
+            'تفاصيل الفعالية',
+            style: TextStyles.font16BoldBlack,
+          ),
+          centerTitle: true,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_outlined),
             onPressed: () {
@@ -35,14 +40,14 @@ class HakthonDetails extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            const Text(
+            Text(
               'هاكاثون تك فيوجن 2024',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: TextStyles.font20BoldBlack,
             ),
             const SizedBox(height: 4),
-            const Text(
+            Text(
               'تحدي الابتكار لمدة 48 ساعة',
-              style: TextStyle(color: Colors.grey),
+              style: TextStyles.font16Mreggray,
             ),
             const SizedBox(height: 16),
             Transform.translate(
@@ -67,14 +72,14 @@ class HakthonDetails extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            const Text(
+            Text(
               'عن الفعالية',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyles.font20BoldBlack,
             ),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               'انضم إلينا في هاكاثون مثير لمدة 48 ساعة حيث يجتمع الطلاب لحل تحديات العالم الحقيقي من خلال التكنولوجيا والابتكار. اعمل مع أشخاص مشابهين في التفكير واصنع شيئًا مذهلاً!',
-              style: TextStyle(height: 1.6),
+              style: TextStyles.font16Mreggray,
             ),
             const SizedBox(height: 16),
             Column(
@@ -90,7 +95,7 @@ class HakthonDetails extends StatelessWidget {
                       Row(
                         children: [
                           Transform.translate(
-                            offset: const Offset(-64, 6),
+                            offset: const Offset(-75, 3),
                             child: SvgPicture.asset(
                                 'assets/images/Saudi_Riyal_black.svg'),
                           ),
@@ -131,9 +136,9 @@ class HakthonDetails extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)),
               ),
-              child: const Text(
+              child: Text(
                 'سجل الآن',
-                style: TextStyle(fontSize: 16, color: Colors.white),
+                style: TextStyles.font16BoldWhite,
               ),
             ),
             const SizedBox(height: 12),
@@ -150,9 +155,9 @@ class HakthonDetails extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)),
               ),
-              child: const Text(
+              child: Text(
                 'طلب الدعم',
-                style: TextStyle(fontSize: 16, color: Colors.indigo),
+                style: TextStyles.font16BoldPrimaryBlue,
               ),
             ),
           ],
@@ -180,9 +185,14 @@ class InfoItem extends StatelessWidget {
       children: [
         Icon(icon, color: ColorsManger.primaryColor),
         const SizedBox(height: 4),
-        Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
-        Text(subLabel,
-            style: const TextStyle(fontSize: 12, color: Colors.grey)),
+        Text(
+          label,
+          style: TextStyles.font16BoldBlack,
+        ),
+        Text(
+          subLabel,
+          style: TextStyles.font16Mreggray,
+        ),
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -22,22 +23,22 @@ class ProfilePageState extends State<ProfilePage> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const Center(
+          Center(
             child: Column(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage('assets/images/profile.png'),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 Text(
                   'محمد أحمد',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyles.font16BoldBlack,
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   'mohammed.ahmed@email.com',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyles.font14BoldDarkBlue,
                 ),
               ],
             ),
@@ -45,13 +46,19 @@ class ProfilePageState extends State<ProfilePage> {
           const SizedBox(height: 24),
           ListTile(
             leading: const Icon(Icons.person_outline),
-            title: const Text('المعلومات الشخصية'),
+            title: Text(
+              'المعلومات الشخصية',
+              style: TextStyles.font16BoldBlack,
+            ),
             trailing: const Icon(Icons.arrow_forward_ios, size: 16),
             onTap: () {},
           ),
           ListTile(
             leading: const Icon(Icons.notifications),
-            title: const Text('الإشعارات'),
+            title: Text(
+              'الإشعارات',
+              style: TextStyles.font16BoldBlack,
+            ),
             trailing: Switch(
               value: notificationsEnabled,
               onChanged: (value) {
@@ -63,40 +70,52 @@ class ProfilePageState extends State<ProfilePage> {
           ),
           ListTile(
             leading: const Icon(Icons.event_note_outlined),
-            title: const Text('فعالياتي'),
-            trailing: const Text(
+            title: Text(
+              'فعالياتي',
+              style: TextStyles.font16BoldBlack,
+            ),
+            trailing: Text(
               '3 قادمة',
-              style: TextStyle(color: Colors.grey),
+              style: TextStyles.font14BoldDarkBlue,
             ),
             onTap: () {},
           ),
           ListTile(
             leading: const Icon(Icons.history),
-            title: const Text('حالة الطلبات'),
-            trailing: const Text(
+            title: Text(
+              'حالة الطلبات',
+              style: TextStyles.font16BoldBlack,
+            ),
+            trailing: Text(
               '2 قيد الانتظار',
-              style: TextStyle(color: Colors.grey),
+              style: TextStyles.font14BoldDarkBlue,
             ),
             onTap: () {},
           ),
           ListTile(
             leading: const Icon(Icons.security_outlined),
-            title: const Text('الخصوصية والأمان'),
+            title: Text(
+              'الخصوصية والأمان',
+              style: TextStyles.font16BoldBlack,
+            ),
             trailing: const Icon(Icons.arrow_forward_ios, size: 16),
             onTap: () {},
           ),
           ListTile(
             leading: const Icon(Icons.help_outline),
-            title: const Text('المساعدة والدعم'),
+            title: Text(
+              'المساعدة والدعم',
+              style: TextStyles.font16BoldBlack,
+            ),
             trailing: const Icon(Icons.arrow_forward_ios, size: 16),
             onTap: () {},
           ),
           const SizedBox(height: 16),
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.red),
-            title: const Text(
+            title: Text(
               'تسجيل الخروج',
-              style: TextStyle(color: Colors.red),
+              style: TextStyles.font16Boldred,
             ),
             onTap: () {
               // تنفيذ تسجيل الخروج

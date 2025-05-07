@@ -14,7 +14,10 @@ class ReviewStudentActivityPage extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: const Text('مراجعة فعالية الطالب'),
+          title: Text(
+            'مراجعة فعالية الطالب',
+            style: TextStyles.font18BoldBlack,
+          ),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
@@ -25,30 +28,24 @@ class ReviewStudentActivityPage extends StatelessWidget {
         body: ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            const Row(
+            Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 30,
                   backgroundImage: AssetImage('assets/images/avatar1.png'),
                 ),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'رواد بن صديق',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'معرف الطالب: ST2023456',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    SizedBox(height: 4),
+                    Text('رواد بن صديق', style: TextStyles.font16BoldBlack),
+                    const SizedBox(height: 4),
+                    Text('معرف الطالب: ST2023456',
+                        style: TextStyles.font16Mreggray),
+                    const SizedBox(height: 4),
                     Text(
                       'علوم الحاسب، السنة الثالثة',
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyles.font16Mreggray,
                     ),
                   ],
                 ),
@@ -67,10 +64,10 @@ class ReviewStudentActivityPage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: Text(
                           'المشاركة في هاكاثون الذكاء الاصطناعي',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyles.font16MediumBlack,
                         ),
                       ),
                       Container(
@@ -96,7 +93,7 @@ class ReviewStudentActivityPage extends StatelessWidget {
                       Icon(Icons.calendar_today, size: 16, color: Colors.grey),
                       SizedBox(width: 6),
                       Text(
-                        '17-15 ديسمبر 2023',
+                        '17-15 ديسمبر 2025',
                         style: TextStyle(color: Colors.grey),
                       ),
                     ],
@@ -127,19 +124,19 @@ class ReviewStudentActivityPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               'مبررات الطالب',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyles.font16MediumBlack,
             ),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               'أتقدم بطلب الموافقة لحضور المؤتمر الدولي لعلوم الحاسب والذكاء الاصطناعي، حيث سأقدم ورقي البحثية حول "تطبيقات التعلم الآلي في التكنولوجيا التعليمية". ستتيح لي هذه الفرصة تبادل المعرفة مع الباحثين في المجال وتمثيل الجامعة في هذا المحفل الدولي.',
-              style: TextStyle(height: 1.6),
+              style: TextStyles.font14MediumGray,
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               'تعليقات الإدارة',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyles.font16MediumBlack,
             ),
             const SizedBox(height: 8),
             TextField(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacknow_app/helpers/colors.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 import 'package:hacknow_app/pages/users/home.dart';
 import 'package:hacknow_app/pages/users/profile.dart';
 import 'package:hacknow_app/pages/users/search_team.dart';
@@ -33,6 +34,8 @@ class _NavBarState extends State<NavBar> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         backgroundColor: Colors.white,
+        selectedLabelStyle: TextStyles.font14BoldBlack,
+        unselectedLabelStyle: TextStyles.font14BoldBlack,
         selectedItemColor: ColorsManger.primaryColor,
         onTap: _onItemTapped,
         items: const [

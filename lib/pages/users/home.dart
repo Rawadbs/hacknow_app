@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hacknow_app/helpers/colors.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 import 'package:hacknow_app/pages/shared/who_you_are.dart';
 import 'package:hacknow_app/pages/users/hakthon_details.dart';
 
@@ -15,21 +16,21 @@ class _HomeState extends State<Home> {
   final List<Map<String, String>> events = [
     {
       'title': 'تحدي الابتكار التقني',
-      'date': '25-26 مارس 2024',
+      'date': '25-26 مارس 2025',
       'location': 'جامعة ستانفورد',
       'prize': '10000 ',
       'image': 'assets/images/event1.png',
     },
     {
       'title': 'هاكاثون الحلول الذكية',
-      'date': '2-4 إبريل 2024',
+      'date': '2-4 إبريل 2025',
       'location': 'فعالية افتراضية',
       'prize': '200000 ',
       'image': 'assets/images/event2.png',
     },
     {
-      'title': 'سباق التصميم 2024',
-      'date': '15 إبريل 2024',
+      'title': 'سباق التصميم 2025',
+      'date': '15 إبريل 2025',
       'location': 'معهد MIT',
       'prize': '200000 ',
       'image': 'assets/images/event3.png',
@@ -70,17 +71,15 @@ class _HomeState extends State<Home> {
               color: const Color(0xffF3F4F6),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: const Row(
+            child: Row(
               children: [
-                SizedBox(width: 150),
+                const SizedBox(width: 150),
                 Text(
                   'ابحث عن الهاكاثونات والمسابقات',
-                  style: TextStyle(
-                    color: Color(0xff9CA3AF),
-                  ),
+                  style: TextStyles.font14MediumLightGray,
                 ),
-                Spacer(),
-                Padding(
+                const Spacer(),
+                const Padding(
                   padding: EdgeInsets.only(right: 12),
                   child: Icon(
                     Icons.search,
@@ -110,22 +109,22 @@ class _HomeState extends State<Home> {
                     backgroundColor: ColorsManger.primaryColor,
                   ),
                   onPressed: () {},
-                  child: const Text('جميع الفعاليات',
-                      style: TextStyle(color: Colors.white))),
+                  child:
+                      Text('جميع الفعاليات', style: TextStyles.font14regWhite)),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xffF3F4F6),
                   ),
                   onPressed: () {},
-                  child: const Text('هاكاثونات',
-                      style: TextStyle(color: Colors.black))),
+                  child:
+                      Text('هاكاثونات', style: TextStyles.font14MediumBlack)),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xffF3F4F6),
                   ),
                   onPressed: () {},
-                  child: const Text('مسابقات البرمجة',
-                      style: TextStyle(color: Colors.black))),
+                  child: Text('مسابقات البرمجة',
+                      style: TextStyles.font14MediumBlack)),
             ],
           ),
           const SizedBox(height: 16),
@@ -138,6 +137,7 @@ class _HomeState extends State<Home> {
                 border: Border.all(color: const Color(0xffF3F4F6)),
               ),
               child: ListTile(
+                titleTextStyle: TextStyles.font16MediumBlack,
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Image.asset(
@@ -160,7 +160,10 @@ class _HomeState extends State<Home> {
                           color: Color(0xff4B5563),
                         ),
                         const SizedBox(width: 4),
-                        Text(event['date']!),
+                        Text(
+                          event['date']!,
+                          style: TextStyles.font14Mreggray,
+                        ),
                       ],
                     ),
                     Row(
@@ -171,7 +174,8 @@ class _HomeState extends State<Home> {
                           color: Color(0xff4B5563),
                         ),
                         const SizedBox(width: 4),
-                        Text(event['location']!),
+                        Text(event['location']!,
+                            style: TextStyles.font14Mreggray),
                       ],
                     ),
                     Row(
@@ -209,7 +213,7 @@ class _HomeState extends State<Home> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: const Text('تسجيل'),
+                    child: Text('تسجيل', style: TextStyles.font14regWhite),
                   ),
                 ),
               ),

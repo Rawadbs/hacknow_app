@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacknow_app/helpers/styles.dart';
 import 'package:hacknow_app/pages/shared/who_you_are.dart';
 import 'package:hacknow_app/pages/universty/review_request_student.dart';
 
@@ -28,7 +29,10 @@ class StudentRequestsPage extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: const Text('طلبات الطلاب'),
+          title: Text(
+            'طلبات الطلاب',
+            style: TextStyles.font18BoldBlack,
+          ),
           centerTitle: true,
           automaticallyImplyLeading: false,
           leading: IconButton(
@@ -118,10 +122,7 @@ class StudentRequestsPage extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     req['name']!,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                    ),
+                                    style: TextStyles.font16BoldBlack,
                                   ),
                                 ),
                                 Container(
@@ -202,7 +203,10 @@ class StatCard extends StatelessWidget {
             children: [
               Icon(icon, size: 20, color: iconColor),
               const SizedBox(width: 8),
-              Text(title),
+              Text(
+                title,
+                style: TextStyles.font14RegularBlack,
+              ),
             ],
           ),
           const SizedBox(height: 12),
@@ -233,7 +237,7 @@ class FilterButton extends StatelessWidget {
         ),
         child: Text(
           label,
-          style: const TextStyle(fontSize: 14),
+          style: TextStyles.font14RegularBlack,
         ),
       ),
     );

@@ -28,7 +28,7 @@ class AppRouters {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.signupScreen:
-        return MaterialPageRoute(builder: (_) => SignUpScreen());
+        return MaterialPageRoute(builder: (_) => const SignUpScreen());
 
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
@@ -39,7 +39,7 @@ class AppRouters {
         return MaterialPageRoute(builder: (_) => const NavBar());
 
       case Routes.welcomeScreen:
-        return MaterialPageRoute(builder: (_) => const WhoAreYouPage());
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
 
       default:
         return null;
