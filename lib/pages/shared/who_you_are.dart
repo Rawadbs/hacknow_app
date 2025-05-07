@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacknow_app/helpers/colors.dart';
 import 'package:hacknow_app/pages/shared/auth/sign_up_screen.dart';
+import 'package:hacknow_app/pages/shared/auth/sign_up_screen_admin.dart';
 import 'package:hacknow_app/pages/shared/auth/sign_up_screen_universty.dart';
 
 class WhoAreYouPage extends StatelessWidget {
@@ -53,7 +54,8 @@ class WhoAreYouPage extends StatelessWidget {
                 subtitle: 'إنشاء وإدارة الفعاليات',
                 onTap: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const SignUpScreenAdmin()),
                 ),
               ),
             ],
@@ -78,7 +80,7 @@ class WhoAreYouPage extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: Colors.blue.shade50,
-          child: Icon(icon, color: Colors.blue),
+          child: Icon(icon, color: ColorsManger.primaryColor),
         ),
         title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Text(subtitle),

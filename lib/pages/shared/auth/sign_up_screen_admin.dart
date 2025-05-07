@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hacknow_app/helpers/extencions.dart';
 import 'package:hacknow_app/helpers/styles.dart';
+import 'package:hacknow_app/pages/admin/hackthonevents.dart';
+import 'package:hacknow_app/pages/shared/auth/login_screen_admin.dart';
 import 'package:hacknow_app/pages/users/home.dart';
 import 'package:hacknow_app/pages/users/nav_bar.dart';
 
@@ -78,7 +80,7 @@ class SignUpScreenAdminState extends State<SignUpScreenAdmin> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const NavBar()));
+                            builder: (context) => const HackathonEventsPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF6C63FF),
@@ -96,7 +98,10 @@ class SignUpScreenAdminState extends State<SignUpScreenAdmin> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    // ضع هنا منطق الانتقال لتسجيل الدخول
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreenAdmin()));
                   },
                   child: RichText(
                     text: const TextSpan(

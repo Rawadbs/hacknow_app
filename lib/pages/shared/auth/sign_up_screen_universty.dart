@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacknow_app/helpers/extencions.dart';
 import 'package:hacknow_app/helpers/styles.dart';
+import 'package:hacknow_app/pages/shared/auth/login_screen_universty.dart';
 import 'package:hacknow_app/pages/universty/student_request.dart';
 import 'package:hacknow_app/pages/users/home.dart';
 import 'package:hacknow_app/pages/users/nav_bar.dart';
@@ -97,7 +98,11 @@ class SignUpScreenUniverstyState extends State<SignUpScreenUniversty> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    // ضع هنا منطق الانتقال لتسجيل الدخول
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const LoginScreenUniversty()));
                   },
                   child: RichText(
                     text: const TextSpan(

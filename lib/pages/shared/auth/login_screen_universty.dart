@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacknow_app/helpers/styles.dart';
+import 'package:hacknow_app/pages/shared/auth/sign_up_screen_universty.dart';
+import 'package:hacknow_app/pages/universty/student_request.dart';
 
 class LoginScreenUniversty extends StatefulWidget {
   const LoginScreenUniversty({super.key});
@@ -45,7 +47,7 @@ class LoginScreenUniverstyState extends State<LoginScreenUniversty> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    // ضع هنا منطق التسجيل
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  StudentRequestsPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF6C63FF),
@@ -63,8 +65,8 @@ class LoginScreenUniverstyState extends State<LoginScreenUniversty> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    // ضع هنا منطق الانتقال لتسجيل الدخول
-                  },
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreenUniversty()));
+                                    },
                   child: RichText(
                     text: const TextSpan(
                       text: 'لا يوجد لديك حساب؟ ',

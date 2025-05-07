@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacknow_app/helpers/styles.dart';
+import 'package:hacknow_app/pages/admin/hackthonevents.dart';
+import 'package:hacknow_app/pages/shared/auth/sign_up_screen_admin.dart';
 
 class LoginScreenAdmin extends StatefulWidget {
   const LoginScreenAdmin({super.key});
@@ -45,7 +47,10 @@ class LoginScreenAdminState extends State<LoginScreenAdmin> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    // ضع هنا منطق التسجيل
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HackathonEventsPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF6C63FF),
@@ -63,7 +68,10 @@ class LoginScreenAdminState extends State<LoginScreenAdmin> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    // ضع هنا منطق الانتقال لتسجيل الدخول
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpScreenAdmin()));
                   },
                   child: RichText(
                     text: const TextSpan(
